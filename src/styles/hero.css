@@ -1,0 +1,208 @@
+/* Matrix Salon — hero.css (split from css/style.css; keep this <link> order in index.html) */
+  /* ---------- Scroll tour / hero ---------- */
+  .tour{position:relative;height:640vh}
+  .tour-sticky{
+    position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .tour-shade{
+    display:none !important;
+  }
+  .hero-copy{
+    position:relative;text-align:center;padding:0 20px;max-width:900px;
+    transition:opacity .18s linear;
+  }
+  .hero-rule{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:22px}
+  .hero-rule span{display:block;width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .hero-rule span:last-child{background:linear-gradient(90deg,var(--gold),transparent)}
+  .hero-rule i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);display:block}
+  .hero-city{font-size:12.5px;font-weight:700;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-bright);margin:0 0 10px;text-indent:.5em}
+  h1.hero-title{
+    font-family:var(--serif);font-weight:500;margin:0;line-height:.94;
+    font-size:clamp(72px,15vw,168px);letter-spacing:.06em;
+    color:var(--ink);text-shadow:0 6px 44px rgba(0,0,0,.65);
+  }
+  h1.hero-title em{font-style:italic;color:var(--gold-bright)}
+  .hero-tag{
+    font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.2vw,30px);
+    color:var(--ink-soft);margin:16px auto 6px;max-width:620px;line-height:1.35;
+  }
+  .hero-sub{color:var(--ink-dim);font-size:14.5px;max-width:520px;margin:10px auto 30px}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .tour-caption{
+    position:absolute;left:50%;bottom:11vh;transform:translateX(-50%);z-index:1;
+    width:min(680px,90vw);text-align:center;opacity:0;pointer-events:none;
+    will-change:opacity;
+  }
+  .tour-caption h2{
+    font-family:var(--serif);font-weight:500;font-size:clamp(30px,5.4vw,52px);
+    margin:0 0 8px;line-height:1.08;text-shadow:0 4px 30px rgba(0,0,0,.8);
+  }
+  .tour-caption h2 em{font-style:italic;color:var(--gold-bright)}
+  .tour-caption p{color:var(--ink-soft);margin:0;font-size:15px;text-shadow:0 2px 14px rgba(0,0,0,.85)}
+  .scroll-hint{
+    position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:4;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-dim);
+    transition:opacity .2s linear;
+  }
+  .scroll-hint .wheel{width:1px;height:44px;background:linear-gradient(180deg,var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+  @keyframes drip{0%{transform:scaleY(.3);transform-origin:top;opacity:.4}55%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:.35}}
+  .tour-progress{
+    position:absolute;right:clamp(16px,3.4vw,40px);top:50%;transform:translateY(-50%);z-index:4;
+    display:flex;flex-direction:column;gap:10px;align-items:center;
+  }
+  .tour-progress b{width:5px;height:5px;border-radius:50%;background:rgba(242,234,217,.25);transition:background .3s, transform .3s}
+  .tour-progress b.on{background:var(--gold-bright);transform:scale(1.7)}
+  @media (max-width:640px){ .tour-progress{display:none} }
+
+  /* ---------- MATRIX shutter (legacy 2D container disabled in favor of pure 3D flow) ---------- */
+  .shutter{
+    display:none !important;
+  }
+
+  /* ---------- Pinned Luxury Hero Portal & Typography (Snug Ring Framing) ---------- */
+  .portal{
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    width:100vw;width:100dvw;
+    height:100vh;height:100dvh;
+    z-index:90;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+    background:transparent;
+    will-change:opacity, transform;
+  }
+  .portal-brand{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transform-origin:center center;
+    will-change:opacity, transform, filter;
+    pointer-events:none;
+    max-width:min(82vw, 360px);
+    padding:0 12px;
+  }
+  .portal-rule{
+    display:flex;align-items:center;gap:10px;margin-bottom:8px;
+    width:clamp(75px, 11vw, 120px);opacity:.85;
+  }
+  .portal-rule span{
+    flex:1;height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold));
+  }
+  .portal-rule span:last-child{
+    background:linear-gradient(90deg, var(--gold), transparent);
+  }
+  .portal-rule i{
+    width:5px;height:5px;transform:rotate(45deg);
+    background:var(--gold-bright);box-shadow:0 0 10px var(--gold);
+    display:inline-block;flex:none;
+  }
+  .portal-title{
+    font-family:var(--serif);
+    font-size:clamp(20px, 3.2vw, 34px);
+    font-weight:600;
+    letter-spacing:.24em;
+    text-indent:.24em;
+    color:var(--ink);
+    line-height:1.08;
+    margin:0 0 6px;
+    text-shadow:0 4px 28px rgba(0,0,0,.95), 0 0 35px rgba(201,163,95,.25);
+    transition:letter-spacing .1s ease-out;
+  }
+  .portal-title em{
+    font-style:italic;
+    color:var(--gold-bright);
+    font-weight:400;
+  }
+  .portal-sub{
+    font-size:clamp(9px, 1.0vw, 11.5px);
+    font-weight:700;
+    letter-spacing:.44em;
+    text-indent:.44em;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin:0;
+    text-shadow:0 2px 14px rgba(0,0,0,.9);
+  }
+  .portal-hint{
+    position:absolute;bottom:clamp(16px, 3.6vh, 32px);
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    font-size:10px;font-weight:700;letter-spacing:.4em;text-indent:.4em;
+    text-transform:uppercase;color:var(--ink-soft);text-align:center;
+    will-change:opacity;pointer-events:none;
+  }
+  .portal-hint .portal-line{
+    width:1px;height:38px;
+    background:linear-gradient(180deg, var(--gold-bright), transparent);
+    animation:drip 2.2s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .portal-hint .portal-line{animation:none}
+  }
+
+  /* ---------- Mirror menu: services in B&W, colour on hover ---------- */
+  .mirror-chips{
+    position:absolute;inset:0;z-index:3;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:84px clamp(16px,4vw,44px) 30px;
+    opacity:0;pointer-events:none;will-change:opacity;
+  }
+  .mchips-head{
+    font-family:var(--serif);font-weight:500;font-size:clamp(26px,4.4vw,42px);
+    margin:0 0 4px;line-height:1.1;text-align:center;text-shadow:0 4px 26px rgba(0,0,0,.85);
+  }
+  .mchips-head em{font-style:italic;color:var(--gold-bright)}
+  .mchips-sub{
+    color:var(--ink-soft);font-size:13.5px;margin:0 0 clamp(16px,3vh,30px);text-align:center;
+    text-shadow:0 2px 12px rgba(0,0,0,.9);max-width:520px;
+  }
+  .mchips-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.8vw,18px);
+    width:min(860px,100%);
+  }
+  .mchip{
+    text-decoration:none;text-align:center;display:block;
+    background:rgba(16,13,9,.72);border:1px solid rgba(242,234,217,.16);
+    border-radius:10px;padding:10px 10px 12px;
+    backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:border-color .3s ease, background .3s ease;
+  }
+  .mchip-img{
+    display:block;overflow:hidden;border-radius:120px 120px 6px 6px;
+    border:1px solid rgba(242,234,217,.14);
+  }
+  .mchip-img img{
+    width:100%;aspect-ratio:16/10;object-fit:cover;display:block;
+    filter:grayscale(1) contrast(1.06) brightness(.92);
+    transition:filter .45s ease, transform .8s ease;
+  }
+  .mchip:hover,.mchip:focus-visible{border-color:var(--gold-bright);background:rgba(30,23,12,.88);outline:none}
+  .mchip:hover .mchip-img,.mchip:focus-visible .mchip-img{border-color:rgba(232,201,135,.55)}
+  .mchip:hover .mchip-img img,.mchip:focus-visible .mchip-img img,.mchip:active .mchip-img img{
+    filter:grayscale(0) contrast(1) brightness(1);transform:scale(1.04);
+  }
+  .mchip-name{
+    display:block;font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.15;
+    margin-top:10px;color:var(--ink-soft);transition:color .3s ease;
+  }
+  .mchip:hover .mchip-name,.mchip:focus-visible .mchip-name{color:var(--ink)}
+  .mchip-from{
+    display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-dim);margin-top:3px;transition:color .3s ease;
+  }
+  .mchip:hover .mchip-from,.mchip:focus-visible .mchip-from{color:var(--gold-bright)}
+  @media (max-width:640px){
+    .mirror-chips{padding-top:74px;justify-content:flex-start}
+    .mchips-grid{grid-template-columns:repeat(2,1fr)}
+    .mchip-img img{aspect-ratio:16/9}
+    .mchip-name{font-size:17px}
+  }
+

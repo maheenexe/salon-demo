@@ -1,0 +1,91 @@
+/* Matrix Salon — tunnel.css (split from css/style.css; keep this <link> order in index.html) */
+  /* ---------- Service tunnel: cinematic 3D ritual carousel (Sarjan style) ---------- */
+  .tunnel-stage{
+    position:relative;height:min(86vh,740px);min-height:540px;overflow:hidden;
+    perspective:1250px;perspective-origin:50% 42%;
+    background:radial-gradient(110% 85% at 50% 0%, #241a0f 0%, #131009 52%, #080605 100%);
+    border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+  }
+  .tunnel-arch{
+    position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);
+    border:1px solid rgba(201,163,95,.16);border-radius:999px 999px 18px 18px;
+    pointer-events:none;
+  }
+  .tunnel-arch.a1{width:min(560px,92vw);height:min(660px,94%)}
+  .tunnel-arch.a2{width:min(760px,124vw);height:min(820px,112%);border-color:rgba(201,163,95,.10)}
+  .tunnel-arch.a3{width:min(1020px,168vw);height:min(1020px,132%);border-color:rgba(201,163,95,.06)}
+  .tunnel-floor{
+    position:absolute;left:0;right:0;bottom:0;height:22%;pointer-events:none;
+    background:linear-gradient(180deg, transparent, rgba(201,163,95,.07) 55%, rgba(5,4,3,.55));
+  }
+  .tpanel{
+    position:absolute;left:50%;top:47%;width:min(380px,74vw);aspect-ratio:3/4.05;
+    border-radius:190px 190px 14px 14px;overflow:hidden;cursor:pointer;isolation:isolate;
+    border:1px solid rgba(232,201,135,.4);
+    box-shadow:0 34px 70px rgba(0,0,0,.6);
+    transition:transform .85s cubic-bezier(.22,.8,.24,1), filter .85s ease, opacity .85s ease;
+    will-change:transform;
+    background:var(--panel);
+  }
+  .tpanel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+  .tpanel::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(180deg, rgba(12,10,8,.14) 34%, rgba(12,10,8,.55) 66%, rgba(12,10,8,.94));
+  }
+  .tpanel-body{position:absolute;left:0;right:0;bottom:0;padding:22px 22px 20px;text-align:center}
+  .tpanel-dept{
+    display:block;font-size:10px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold-bright);margin-bottom:7px;
+  }
+  .tpanel-name{font-family:var(--serif);font-size:clamp(24px,3.4vw,31px);font-weight:600;line-height:1.08;display:block}
+  .tpanel-price{
+    position:absolute;top:20px;left:50%;transform:translateX(-50%);z-index:1;white-space:nowrap;
+    background:rgba(10,8,5,.78);border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gold-bright);
+    backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  }
+  .tpanel-price small{display:block;font-size:8.5px;letter-spacing:.2em;color:var(--ink-dim);text-align:center}
+  .tunnel-arrow{
+    position:absolute;top:47%;transform:translateY(-50%);z-index:20;
+    width:54px;height:54px;border-radius:50%;cursor:pointer;
+    background:rgba(12,10,7,.72);border:1px solid var(--line);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+    transition:border-color .25s ease, background .25s ease, transform .25s ease;
+  }
+  .tunnel-arrow:hover{border-color:var(--gold-bright);background:rgba(34,25,12,.9)}
+  .tunnel-arrow.prev{left:clamp(12px,3.4vw,42px)}
+  .tunnel-arrow.next{right:clamp(12px,3.4vw,42px)}
+  .tunnel-count{
+    position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:20;
+    font-size:11px;font-weight:700;letter-spacing:.34em;text-indent:.34em;color:var(--ink-dim);
+    pointer-events:none;white-space:nowrap;
+  }
+  .tunnel-count b{color:var(--gold-bright);font-weight:700}
+  .tunnel-detail{max-width:760px;margin:0 auto;padding:40px clamp(18px,4.5vw,44px) 8px;text-align:center}
+  .tunnel-detail.swap{animation:panelIn .5s ease both}
+  .tunnel-detail .td-dept{font-size:11px;font-weight:700;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+  .tunnel-detail h3{font-family:var(--serif);font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.04;margin:0 0 10px}
+  .tunnel-detail h3 em{font-style:italic;color:var(--gold-bright)}
+  .td-desc{color:var(--ink-soft);font-size:16px;margin:0 auto 8px;max-width:520px}
+  .td-price{font-family:var(--serif);font-size:22px;color:var(--gold-bright);margin:0 0 26px}
+  .td-price small{font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-right:8px}
+  .td-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .td-dots{display:flex;gap:9px;justify-content:center;margin-top:28px}
+  .td-dots button{
+    width:26px;height:3px;border:none;border-radius:2px;cursor:pointer;padding:0;
+    background:rgba(242,234,217,.22);transition:background .3s ease;
+  }
+  .td-dots button.on{background:var(--gold-bright)}
+  .td-dots button:hover{background:var(--gold)}
+  @media (max-width:640px){
+    .tunnel-stage{min-height:480px;height:74vh}
+    .tpanel{width:min(300px,72vw)}
+    .tunnel-arrow{width:46px;height:46px;top:auto;bottom:52px;transform:none}
+    .tunnel-count{bottom:20px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .tpanel{transition:none}
+    .tunnel-detail.swap{animation:none}
+  }
+

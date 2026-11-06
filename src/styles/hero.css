@@ -1,4 +1,4 @@
-/* Matrix Salon — hero.css (split from css/style.css; keep this <link> order in index.html) */
+/* Bhanu's The Hair Studio — hero.css (split from css/style.css; keep this <link> order in index.html) */
   /* ---------- Scroll tour / hero ---------- */
   .tour{position:relative;height:640vh}
   .tour-sticky{
@@ -56,7 +56,7 @@
   .tour-progress b.on{background:var(--gold-bright);transform:scale(1.7)}
   @media (max-width:640px){ .tour-progress{display:none} }
 
-  /* ---------- MATRIX shutter (legacy 2D container disabled in favor of pure 3D flow) ---------- */
+  /* ---------- Legacy 2D container disabled in favor of pure 3D flow ---------- */
   .shutter{
     display:none !important;
   }
@@ -86,12 +86,12 @@
     transform-origin:center center;
     will-change:opacity, transform, filter;
     pointer-events:none;
-    max-width:min(82vw, 360px);
+    max-width:min(90vw, 480px);
     padding:0 12px;
   }
   .portal-rule{
     display:flex;align-items:center;gap:10px;margin-bottom:8px;
-    width:clamp(75px, 11vw, 120px);opacity:.85;
+    width:clamp(80px, 12vw, 130px);opacity:.85;
   }
   .portal-rule span{
     flex:1;height:1px;
@@ -107,14 +107,15 @@
   }
   .portal-title{
     font-family:var(--serif);
-    font-size:clamp(20px, 3.2vw, 34px);
+    font-size:clamp(24px, 4.0vw, 42px);
     font-weight:600;
-    letter-spacing:.24em;
-    text-indent:.24em;
+    letter-spacing:.26em;
+    text-indent:.26em;
     color:var(--ink);
     line-height:1.08;
     margin:0 0 6px;
     text-shadow:0 4px 28px rgba(0,0,0,.95), 0 0 35px rgba(201,163,95,.25);
+    white-space:nowrap;
     transition:letter-spacing .1s ease-out;
   }
   .portal-title em{
@@ -123,14 +124,15 @@
     font-weight:400;
   }
   .portal-sub{
-    font-size:clamp(9px, 1.0vw, 11.5px);
+    font-size:clamp(8px, 1.0vw, 12px);
     font-weight:700;
-    letter-spacing:.44em;
-    text-indent:.44em;
+    letter-spacing:.38em;
+    text-indent:.38em;
     color:var(--gold);
     text-transform:uppercase;
     margin:0;
     text-shadow:0 2px 14px rgba(0,0,0,.9);
+    white-space:nowrap;
   }
   .portal-hint{
     position:absolute;bottom:clamp(16px, 3.6vh, 32px);

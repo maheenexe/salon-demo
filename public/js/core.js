@@ -1,4 +1,4 @@
-// Matrix Salon — core.js — error box, tabs, reveal-on-scroll, booking form
+// Bhanu's The Hair Studio — core.js — error box, tabs, reveal-on-scroll, booking form
 // Split from js/main.js (original single-file build). Keep load order:
 // vendor-three.js -> core.js -> tour.js -> scene.js -> showcase.js -> tunnel.js
 "use strict";
@@ -49,7 +49,7 @@
   function completePreloader(){
     if(preloaderDone) return;
     preloaderDone = true;
-    updatePreloader(100, 'Welcome to Matrix Salon');
+    updatePreloader(100, "Welcome to Bhanu's The Hair Studio");
     setTimeout(function(){
       if(preloader) preloader.classList.add('loaded');
     }, 420);
@@ -103,7 +103,7 @@
   }
 
   /* ---------------- Booking form -> WhatsApp ---------------- */
-  var WA_NUMBER = '919876543210'; /* Matrix Salon booking number */
+  var WA_NUMBER = '919876543210'; /* Bhanu's The Hair Studio booking number */
   var form = document.getElementById('bookForm');
   var msg = document.getElementById('formMsg');
   form.addEventListener('submit', function(ev){
@@ -123,7 +123,7 @@
       niceDate = new Date(date + 'T00:00:00').toLocaleDateString('en-IN', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
     } catch(e){}
     var lines = [
-      'Hi Matrix Salon! I would like to book an appointment.',
+      "Hi Bhanu's The Hair Studio! I would like to book an appointment.",
       'Name: ' + name,
       'Mobile: ' + phone,
       'Service: ' + service,

@@ -1,4 +1,4 @@
-// Matrix Salon — tunnel.js — service tunnel carousel (self-contained)
+// Bhanu's The Hair Studio — tunnel.js — service tunnel carousel (self-contained)
 // Split from js/main.js (original single-file build). Keep load order:
 // vendor-three.js -> core.js -> tour.js -> scene.js -> showcase.js -> tunnel.js
 (function(){
@@ -14,24 +14,24 @@
   var tourProgress = (typeof window !== 'undefined' && typeof window.tourProgress === 'number') ? window.tourProgress : 0;
 
   var RITUALS = [
-    { name:'Balayage & Ombre', em:'Ombre', dept:'Hair Studio', key:'hair',
-      img:'assets/img-02.jpg', alt:'Balayage hair styling with soft blonde waves',
-      price:'₹4,499', desc:'Hand-painted, sun-kissed dimension — the transformation our colour studio is loved for.', book:'Balayage / Global Colour' },
-    { name:'HydraFacial', em:'HydraFacial', dept:'Skin Lounge', key:'skin',
-      img:'assets/img-03.jpg', alt:'Relaxing facial treatment at the skin lounge',
-      price:'₹1,999', desc:'Deep cleanse, exfoliation and a hydration boost for lit-from-within skin.', book:'HydraFacial' },
-    { name:'Bridal Makeup — Airbrush', em:'Airbrush', dept:'Bridal Suite', key:'makeup',
-      img:'assets/img-04.jpg', alt:'Indian bride in full bridal makeup and jewellery',
-      price:'₹19,999', desc:'Featherlight, waterproof and flawless all day — with hairstyling and draping.', book:'Bridal Makeup' },
-    { name:'Full Body Massage', em:'Massage', dept:'Body & Spa', key:'body',
-      img:'assets/img-01.jpg', alt:'Calm luxury salon lounge where spa rituals take place',
-      price:'₹1,499', desc:'Swedish and Balinese relaxation rituals that melt the city off your shoulders.', book:'Body Spa & Massage' },
-    { name:'Gel Nail Extensions', em:'Extensions', dept:'Nail Studio', key:'nails',
-      img:'assets/img-05.jpg', alt:'Manicure with polished nails at the nail studio',
-      price:'₹1,499', desc:'Length and shape built to your style, finished with chip-free shine.', book:'Nail Extensions' },
-    { name:'Luxury Hot-Towel Shave', em:'Hot-Towel', dept:"Men's Grooming", key:'men',
-      img:'assets/img-06.jpg', alt:'Barber giving a precision haircut at the grooming bar',
-      price:'₹149', desc:'Hot towel, rich lather, cooling finish — the classic ritual, done the slow way.', book:'Beard & Shave' }
+    { name:'Precision Hair Sculpting & Styling', em:'Sculpting', dept:'Hair Studio', key:'hair',
+      img:'assets/img-02.jpg', alt:'Precision hair sculpting and bespoke styling with soft waves',
+      price:'₹499', desc:'Bespoke scissor craft, face-framing contours, and effortless movement tailored to your personality.', book:'Precision Hair Sculpting & Styling' },
+    { name:'Advanced Hair Treatments', em:'Treatments', dept:'Treatment Bar', key:'treatment',
+      img:'assets/img-03.jpg', alt:'Advanced hair treatments with mirror shine and deep repair',
+      price:'₹3,499', desc:'Keratin, Hair Botox and Rebonding for deep molecular repair, zero frizz, and mirror-like silkiness.', book:'Advanced Hair Treatments (Keratin, Rebonding, Color)' },
+    { name:'Royal Beard Grooming & Shave', em:'Royal', dept:"Men's Lounge", key:'men',
+      img:'assets/img-06.jpg', alt:'Barber giving a luxury hot towel shave and royal beard sculpting',
+      price:'₹149', desc:'Hot towel therapy, rich lather, precision straight razor lines and soothing post-shave balm.', book:'Royal Beard Grooming & Shaving' },
+    { name:'Bridal & Event Artistry', em:'Artistry', dept:'Bridal Suite', key:'makeup',
+      img:'assets/img-04.jpg', alt:'Indian bride in HD and airbrush bridal makeup and jewellery',
+      price:'₹14,999', desc:'Featherlight, waterproof HD & Airbrush glam crafted to radiate under every camera flash.', book:'Bridal & Event Artistry' },
+    { name:'Skin Rejuvenation & Care', em:'Rejuvenation', dept:'Skin Lounge', key:'skin',
+      img:'assets/img-05.jpg', alt:'HydraFacial and lit-from-within skin rejuvenation treatment',
+      price:'₹1,999', desc:'HydraFacial infusion, deep exfoliation and collagen revival for that signature lit-from-within glow.', book:'Skin Rejuvenation & Care' },
+    { name:'Dimensional Balayage & Color', em:'Balayage', dept:'Colour Lab', key:'treatment',
+      img:'assets/img-01.jpg', alt:'Sun-kissed hand-painted balayage and dimensional hair color',
+      price:'₹4,499', desc:'Sun-kissed, hand-painted dimension and ammonia-free gloss that grows out seamlessly.', book:'Advanced Hair Treatments (Keratin, Rebonding, Color)' }
   ];
 
   var stage = document.getElementById('tunnelStage');

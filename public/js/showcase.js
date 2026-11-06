@@ -1,4 +1,4 @@
-// Matrix Salon — showcase.js — 3D Showcase wall (self-contained)
+// Bhanu's The Hair Studio — showcase.js — 3D Showcase wall (self-contained)
 // Split from js/main.js (original single-file build). Keep load order:
 // vendor-three.js -> core.js -> tour.js -> scene.js -> showcase.js -> tunnel.js
 (function(){
@@ -6,18 +6,18 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var DEPTS = [
-    { key:'hair', name:'Hair', tag:'Cuts, colour & transformations', from:'₹499', book:'Haircut & Styling',
-      services:[['Signature Haircut & Styling','₹499'],['Balayage & Ombre','₹4,499'],['Global Hair Colour','₹2,999'],['Highlights & Lowlights','₹2,499'],['Keratin Treatment','₹3,999'],['Hair Botox','₹4,999'],['Smoothening & Rebonding','₹3,499'],['Hair Spa Ritual','₹999'],['Scalp & Hair-Fall Treatment','₹1,499'],['Blowout & Party Styling','₹599']] },
-    { key:'skin', name:'Skin & Facials', tag:'Glow rituals for lit-from-within skin', from:'₹49', book:'Signature Facial',
-      services:[['HydraFacial','₹1,999'],['Signature Gold Facial','₹1,499'],['Brightening Facial','₹1,299'],['Anti-Ageing Facial','₹2,499'],['Express Clean-Up','₹599'],['De-Tan Treatment','₹499'],['Bleach','₹399'],['Threading & Brow Shaping','₹49']] },
-    { key:'makeup', name:'Makeup & Bridal', tag:'HD & airbrush artistry for your big day', from:'₹499', book:'Bridal Makeup',
-      services:[['Bridal Makeup — HD','₹14,999'],['Bridal Makeup — Airbrush','₹19,999'],['Engagement & Reception Look','₹7,999'],['Party Makeup','₹1,999'],['Sangeet & Haldi Looks','₹2,499'],['Pre-Bridal Packages','₹9,999'],['Saree & Lehenga Draping','₹499'],['Hairstyling Only','₹799']] },
-    { key:'nails', name:'Nails', tag:'Extensions, art & spa care', from:'₹499', book:'Nail Extensions',
-      services:[['Gel Nail Extensions','₹1,499'],['Acrylic Extensions','₹1,799'],['Nail Art Studio','₹499'],['Gel Polish','₹699'],['Spa Manicure','₹599'],['Spa Pedicure','₹799']] },
-    { key:'body', name:'Body & Spa', tag:'Massage, polishing & total calm', from:'₹499', book:'Body Spa & Massage',
-      services:[['Full Body Massage','₹1,499'],['Body Polishing','₹1,999'],['Full Body Waxing','₹1,499'],['Rica Waxing','₹1,799'],['Head, Neck & Shoulder Massage','₹499'],['Foot Reflexology','₹699']] },
-    { key:'men', name:"Men's Grooming", tag:'Sharp cuts, sculpted beards, luxury shaves', from:'₹149', book:"Men's Haircut",
-      services:[["Men's Haircut",'₹299'],['Beard Styling & Trim','₹199'],['Luxury Shave','₹149'],['Hair Colour & Grey Coverage','₹699'],["Men's Facial & De-Tan",'₹999'],['Head Massage','₹499'],['Groom Packages','₹4,999']] }
+    { key:'hair', name:'Precision Hair Sculpting', tag:'Bespoke scissor cuts, signature styling & contouring', from:'₹499', book:'Precision Hair Sculpting & Styling',
+      services:[['Signature Hair Sculpting & Styling','₹499'],['Creative Scissor Work & Fades','₹399'],['Blowout & Red Carpet Styling','₹599'],['Hair Spa & Scalp Detox','₹999'],['Scalp & Hair-Fall Therapy','₹1,499']] },
+    { key:'treatment', name:'Advanced Hair Treatments', tag:'Keratin, rebonding, hair botox & dimensional color', from:'₹2,499', book:'Advanced Hair Treatments (Keratin, Rebonding, Color)',
+      services:[['Keratin Infusion Therapy','₹3,999'],['Hair Botox Deep Repair','₹4,999'],['Smoothening & Rebonding','₹3,499'],['Global Hair Colour & Gloss','₹2,999'],['Balayage & Dimensional Foils','₹4,499'],['Highlights & Lowlights','₹2,499']] },
+    { key:'men', name:"Royal Beard Grooming", tag:'Hot towel shaves, sharp fades & beard sculpt', from:'₹149', book:"Royal Beard Grooming & Shaving",
+      services:[["Royal Shave & Hot Towel Ritual",'₹149'],['Beard Sculpting, Trim & Line-up','₹199'],["Gentlemen's Precision Haircut",'₹299'],['Beard Spa & Conditioning','₹399'],['Hair Colour & Grey Coverage','₹699'],['Executive Grooming Package','₹1,499']] },
+    { key:'makeup', name:'Bridal & Event Artistry', tag:'HD & airbrush bridal excellence, couture looks', from:'₹1,999', book:'Bridal & Event Artistry',
+      services:[['Signature Bridal Makeup — HD','₹14,999'],['Bridal Makeup — Airbrush','₹19,999'],['Engagement & Sangeet Glam','₹7,999'],['Reception Red Carpet Look','₹8,999'],['Party & Occasion Makeup','₹1,999'],['Pre-Bridal Radiance Programmes','₹9,999'],['Hairstyling & Saree Draping','₹799']] },
+    { key:'skin', name:'Skin Rejuvenation & Care', tag:'HydraFacials, gold rejuvenation & glow rituals', from:'₹499', book:'Skin Rejuvenation & Care',
+      services:[['HydraFacial Glow Treatment','₹1,999'],['Signature 24K Gold Facial','₹1,499'],['Brightening & Radiance Facial','₹1,299'],['Anti-Ageing Collagen Boost','₹2,499'],['Deep Pore Express Clean-Up','₹599'],['De-Tan Brightening Treatment','₹499']] },
+    { key:'spa', name:'Spa & Scalp Therapy', tag:'Deep conditioning steam, massage & tension release', from:'₹499', book:'Spa & Scalp Therapy',
+      services:[['Full Body Swedish / Balinese Massage','₹1,499'],['Head, Neck & Shoulder Champi','₹499'],['Foot Reflexology Therapy','₹699'],['Body Polishing & Glow Ritual','₹1,999'],['Full Body Waxing & Rica Care','₹1,499']] }
   ];
 
   var stage = document.getElementById('showStage');
@@ -303,7 +303,7 @@
       g.rotation.z = -0.3;
       return g;
     }
-    var BUILDERS = { hair: buildScissors, skin: buildJar, makeup: buildLipstick, nails: buildPolish, body: buildCandle, men: buildRazor };
+    var BUILDERS = { hair: buildScissors, treatment: buildJar, men: buildRazor, makeup: buildLipstick, skin: buildPolish, spa: buildCandle, nails: buildPolish, body: buildCandle };
 
     /* ----- the wall ----- */
     var wallGroup = new THREE.Group();

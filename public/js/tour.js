@@ -1,10 +1,10 @@
-// Matrix Salon — tour.js — cinematic portal intro, 3D tunnel flight, salon tour
+// Bhanu's The Hair Studio — tour.js — cinematic portal intro, 3D tunnel flight, salon tour
 // Split from js/main.js (original single-file build). Keep load order:
 // vendor-three.js -> core.js -> tour.js -> scene.js -> showcase.js -> tunnel.js
 "use strict";
   /* ---------------- Scroll tour UI ----------------
      Cinematic 9-step hybrid transition:
-       0% - 15%: Centered luxury typography ("MATRIX SALON") dissolves and scales
+       0% - 15%: Centered luxury typography ("BHANU'S THE HAIR STUDIO") dissolves and scales
                  down smoothly over the 3D Golden Ring; gold specks disperse.
        15% - 55%: Camera accelerates forward through the hollow center of the 3D
                   Golden Ring into the procedural golden light streak tunnel.

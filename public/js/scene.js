@@ -1,4 +1,4 @@
-// Matrix Salon — scene.js — Three.js salon: room, stations, dust, camera path
+// Bhanu's The Hair Studio — scene.js — Three.js salon: room, stations, dust, camera path
 // Split from js/main.js (original single-file build). Keep load order:
 // vendor-three.js -> core.js -> tour.js -> scene.js -> showcase.js -> tunnel.js
 "use strict";
@@ -425,15 +425,15 @@
     roughness: 0.18,
     envMapIntensity: 2.4
   });
-  /* Scaled-down Torus geometry snugly framing "MATRIX SALON • INDORE" typography */
-  var ringOuter = new THREE.Mesh(new THREE.TorusGeometry(1.22, 0.046, 32, 120), matGoldRing);
+  /* Scaled-down Torus geometry gracefully framing "BHANU'S THE HAIR STUDIO • INDORE" typography */
+  var ringOuter = new THREE.Mesh(new THREE.TorusGeometry(1.36, 0.048, 32, 120), matGoldRing);
   portalHeroGroup.add(ringOuter);
   window.heroRingMesh = ringOuter;
   window.portalHeroGroup = portalHeroGroup;
   window.heroRingGroup = portalHeroGroup;
 
   var ringInner = new THREE.Mesh(
-    new THREE.TorusGeometry(1.15, 0.016, 20, 100),
+    new THREE.TorusGeometry(1.27, 0.016, 20, 100),
     new THREE.MeshStandardMaterial({
       color: 0xffeec7,
       emissive: 0x9a7d3a,
@@ -455,9 +455,9 @@
   var heroDustSeed = new Float32Array(HERO_DUST_COUNT);
   for(var hdi = 0; hdi < HERO_DUST_COUNT; hdi++){
     var angle = Math.random() * Math.PI * 2;
-    var dist = 0.2 + Math.random() * 0.95;
-    var hx = Math.cos(angle) * dist;
-    var hy = Math.sin(angle) * dist * 0.72;
+    var dist = 0.22 + Math.random() * 1.05;
+    var hx = Math.cos(angle) * dist * 1.15;
+    var hy = Math.sin(angle) * dist * 0.76;
     var hz = (Math.random() - 0.5) * 0.6;
     heroDustInit.push({ x: hx, y: hy, z: hz, angle: angle, dist: dist });
     heroDustPos[hdi * 3] = hx;
@@ -846,7 +846,7 @@
       if(frameCount < 3) renderer.shadowMap.needsUpdate = true;
       renderer.render(scene, camera);
       if(frameCount === 1 && window.completePreloader){
-        updatePreloader(100, 'Welcome to Matrix Salon');
+        updatePreloader(100, "Welcome to Bhanu's The Hair Studio");
         completePreloader();
       }
     } catch(err){
